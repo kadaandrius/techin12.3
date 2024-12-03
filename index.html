@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024-12-03</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #000A10;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+        }
+
+        .tree-container, .gift-container {
+            margin: 20px 0;
+        }
+
+        .christmas-tree, .gift-box {
+            width: 250px;
+            height: auto;
+            animation: glow 0.8s infinite alternate;
+        }
+
+        .greeting {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .gift-btn {
+            text-decoration: none;
+            background: #ff4d4d;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+            transition: all 1s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gift-btn:hover {
+            background: #ff2929;
+            box-shadow: 0 8px 20px rgba(255, 41, 41, 0.7);
+            transform: scale(1.1);
+        }
+
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 1px #ffaf40);
+            }
+            to {
+                filter: drop-shadow(0 0 19px #ff8c00);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="landing-page" class="container">
+        <h1 class="title">✨ Welcome to the Christmas Wonderland! ✨</h1>
+        <div class="tree-container">
+            <img src="christmas_tree.png" alt="Christmas Tree" class="christmas-tree">
+        </div>
+        <p class="greeting">May your holidays sparkle with joy and laughter!</p>
+        <button class="gift-btn" onclick="showGift()">🎁 Open Your Gift 🎁</button>
+        <p class="footer">Made with ❤️ for the holiday season.</p>
+    </div>
+
+    <div id="gift-page" class="container hidden">
+        <div class="gift-container">
+            <img src="gift.png" alt="Gift Box" class="gift-box">
+        </div>
+        <button class="gift-btn" onclick="showLandingPage()">🎁 <- Back 🎁</button>
+    </div>
+
+    <script>
+        function showGift() {
+            document.getElementById('landing-page').classList.add('hidden');
+            document.getElementById('gift-page').classList.remove('hidden');
+        }
+
+        function showLandingPage() {
+            document.getElementById('gift-page').classList.add('hidden');
+            document.getElementById('landing-page').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
